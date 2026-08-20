@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Mentoria para advogadas · Dra. Tarine Costa</title>
+<meta name="description" content="Mentoria para advogadas que querem um escritório previsível: processos, delegação e uma equipe com autonomia. Com a Dra. Tarine Costa, OAB/MG 169.455, que construiu o próprio escritório do zero no interior de Minas.">
+<meta property="og:title" content="Mentoria para advogadas · Dra. Tarine Costa">
+<meta property="og:description" content="Um escritório que funciona mesmo quando você não está. Processos, delegação e equipe com autonomia.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og-tarine.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- favicon: o SVG serve os navegadores modernos, o .ico cobre o resto e evita 404 no console -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23120A08'/><text x='16' y='23' font-family='Georgia,serif' font-size='16' font-weight='700' fill='%23C08A5E' text-anchor='middle'>TC</text></svg>">
+<link rel="alternate icon" href="favicon.ico" sizes="32x32 64x64">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="theme-color" content="#120A08">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- preloader: some sozinho quando as imagens carregam -->
+<div id="preloader">
+  <div class="pre-mark">
+    <span class="pre-sigla">TC</span>
+    <span class="pre-line"></span>
+    <span class="pre-name">Dra. Tarine Costa</span>
+  </div>
+</div>
+
+<!-- camadas cinematográficas: ficam por cima de tudo, sem capturar clique -->
+<div class="grain"></div>
+<div class="vignette"></div>
+<canvas id="particles"></canvas>
+
+<header id="header">
+  <a href="#hero" class="brand">
+    <span class="brand-sigla">TC</span>
+    <span class="brand-text">
+      <strong>Dra. Tarine Costa</strong>
+      <em>Mentoria para advogadas</em>
+    </span>
+  </a>
+  <nav>
+    <a href="#situacoes">O problema</a>
+    <a href="#pilares">O caminho</a>
+    <a href="#autora">Quem conduz</a>
+    <a href="#paraquem">Para quem é</a>
+  </nav>
+  <a href="https://wa.me/5538992280505?text=Oi!%20Quero%20conversar%20sobre%20a%20mentoria." class="btn btn-solid btn-header">Quero conversar</a>
+</header>
+
+<!-- ============================================================
+     HERO: a sequência de frames roda enquanto esta seção fica presa
+     ============================================================ -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <!-- o clipe deitado corta a Tarine fora no celular, então existe uma versão vertical.
+       O <source media> escolhe sozinho, sem javascript. -->
+  <video id="hero-video" poster="assets/img/hero-poster-mobile.jpg"
+         autoplay muted loop playsinline preload="auto">
+    <source src="assets/video/hero-mobile.mp4" media="(max-width: 768px)" type="video/mp4">
+    <source src="assets/video/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-shade"></div>
+
+  <div class="hero-content">
+    <p class="eyebrow reveal-hero">Mentoria para advogadas</p>
+    <h1 class="reveal-hero">Seu escritório precisa funcionar <em>mesmo quando você não está</em>.</h1>
+    <p class="hero-sub reveal-hero">
+      Para a advogada que virou o gargalo do próprio escritório. Processos, delegação e
+      uma equipe que decide sem esperar por você.
+    </p>
+    <div class="hero-ctas reveal-hero">
+      <a href="https://wa.me/5538992280505?text=Oi!%20Quero%20conversar%20sobre%20a%20mentoria." class="btn btn-solid">Quero conversar sobre a mentoria</a>
+      <a href="#paraquem" class="btn btn-ghost">Ver se é pro meu momento</a>
+    </div>
+    <div class="hero-proof reveal-hero">
+      <span><strong>OAB/MG 169.455</strong> · 10 anos de escritório próprio · Porteirinha, MG</span>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    role
+    <span></span>
+  </div>
+</section>
+
+<!-- faixa que rola: os termos de gestão, não os de técnica jurídica -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Processos</span><i>◆</i>
+    <span>Delegação</span><i>◆</i>
+    <span>Equipe com autonomia</span><i>◆</i>
+    <span>Rotina do escritório</span><i>◆</i>
+    <span>Previsibilidade</span><i>◆</i>
+    <span>Posicionamento</span><i>◆</i>
+    <span>Honorários</span><i>◆</i>
+    <!-- o conteúdo é repetido de propósito: é o que faz o loop parecer infinito -->
+    <span>Processos</span><i>◆</i>
+    <span>Delegação</span><i>◆</i>
+    <span>Equipe com autonomia</span><i>◆</i>
+    <span>Rotina do escritório</span><i>◆</i>
+    <span>Previsibilidade</span><i>◆</i>
+    <span>Posicionamento</span><i>◆</i>
+    <span>Honorários</span><i>◆</i>
+  </div>
+</div>
+
+<!-- ---------- prova em números ---------- -->
+<section id="prova">
+  <div class="prova-grid reveal">
+    <div class="prova-item"><strong>10 anos</strong><span>de escritório próprio</span></div>
+    <div class="prova-item"><strong>Do zero</strong><span>sem escritório herdado</span></div>
+    <div class="prova-item"><strong>Interior</strong><span>longe de um grande centro</span></div>
+    <div class="prova-item"><strong>OAB/MG</strong><span>169.455</span></div>
+  </div>
+</section>
+
+<!-- ---------- as dores ---------- -->
+<section id="situacoes">
+  <div class="section-head reveal">
+    <h2>O escritório cresceu. <em>E a conta não fecha</em></h2>
+    <p class="section-sub">
+      Se você chegou até aqui, provavelmente já viveu uma destas três situações.
+    </p>
+  </div>
+  <div class="cards-3">
+    <article class="glass reveal">
+      <span class="card-num">01</span>
+      <h3>Tudo passa por você</h3>
+      <p>Nenhuma petição sai, nenhum cliente é respondido e nenhuma decisão anda sem a sua assinatura. Você virou o funil por onde o escritório inteiro precisa caber.</p>
+    </article>
+    <article class="glass reveal">
+      <span class="card-num">02</span>
+      <h3>A equipe espera para agir</h3>
+      <p>Você contratou gente boa, mas ninguém decide sozinho. Toda dúvida volta para a sua mesa, e delegar acaba dando mais trabalho do que fazer.</p>
+    </article>
+    <article class="glass reveal">
+      <span class="card-num">03</span>
+      <h3>Entra mais, e não sobra</h3>
+      <p>O volume de casos subiu, a sua agenda encheu, e mesmo assim o mês seguinte continua sendo uma incógnita. Crescer virou sinônimo de trabalhar mais.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ---------- a tese, na voz dela ---------- -->
+<section id="tese">
+  <blockquote class="tese-quote reveal">
+    “Quando tudo depende de você, o problema não é falta de tempo, é falta de autonomia
+    na equipe.”
+    <cite>Dra. Tarine Costa</cite>
+  </blockquote>
+</section>
+
+<!-- ---------- os três pilares ---------- -->
+<section id="pilares">
+  <div class="section-head reveal">
+    <h2>Três coisas sustentam <em>um escritório previsível</em></h2>
+    <p class="section-sub">
+      Não é motivação nem produtividade pessoal. É estrutura: o que precisa existir para o
+      escritório crescer sem depender de uma única pessoa.
+    </p>
+  </div>
+  <div class="cards-3">
+    <article class="glass reveal">
+      <span class="card-num">01</span>
+      <h3>Delegar de verdade</h3>
+      <p>Sair do lugar de quem revisa tudo e entrar no lugar de quem define o padrão. Delegar não é passar tarefa, é transferir critério de decisão junto.</p>
+    </article>
+    <article class="glass reveal">
+      <span class="card-num">02</span>
+      <h3>Criar processos</h3>
+      <p>O que hoje só existe na sua cabeça vira rotina escrita: como o cliente entra, como o caso anda, o que acontece em cada etapa. Processo é o que faz o resultado se repetir.</p>
+    </article>
+    <article class="glass reveal">
+      <span class="card-num">03</span>
+      <h3>Confiar no time</h3>
+      <p>Com padrão definido e rotina no lugar, a equipe passa a decidir sem esperar. É aí que o escritório para de travar toda vez que você sai da sala.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ---------- quem conduz ---------- -->
+<section id="autora">
+  <div class="autora-wrap">
+    <figure class="autora-foto reveal">
+      <img src="assets/img/tarine-evento.jpg" alt="Dra. Tarine Costa em evento de marketing jurídico no Espaço OAB, em Montes Claros" width="600" height="800" loading="lazy">
+      <figcaption>Evento de marketing jurídico · Espaço OAB, Montes Claros</figcaption>
+    </figure>
+    <div class="autora-texto">
+      <div class="section-head reveal" style="text-align:left">
+        <p class="eyebrow">Quem conduz a mentoria</p>
+        <h2>Ela construiu o escritório <em>que está te ensinando a construir</em></h2>
+      </div>
+      <p class="reveal">
+        Tarine Costa começou do zero, sem sócio, sem escritório herdado e sem atalho. O que ela
+        tinha era uma convicção: trabalhador rural merece advocacia de qualidade, mesmo a
+        quilômetros de distância de um grande centro.
+      </p>
+      <p class="reveal">
+        Ao longo de mais de dez anos em Porteirinha, Minas Gerais, transformou essa convicção em
+        um escritório conceituado, com equipe e rotina próprias. A mentoria nasceu do caminho que
+        ela percorreu para sair de advogada que faz tudo e chegar em advogada que dirige um
+        escritório.
+      </p>
+      <blockquote class="autora-quote reveal">
+        “Poder ter esse contato diário com quem de fato vive a advocacia nos traz coragem,
+        leveza, segurança e disciplina.”
+        <cite>Trecho do depoimento de uma advogada mentorada</cite>
+      </blockquote>
+      <ul class="autora-creds reveal">
+        <li><strong>OAB/MG 169.455</strong>, inscrita na seccional de Minas Gerais</li>
+        <li><strong>Escritório próprio</strong>, com equipe, construído do zero em Porteirinha</li>
+        <li><strong>Interior por escolha</strong>, provando que não é preciso capital para ter estrutura</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- depoimentos sobre vídeo de fundo ---------- -->
+<section id="depoimentos">
+  <video src="assets/video/accent.mp4" autoplay muted loop playsinline></video>
+  <div class="dep-shade"></div>
+  <div class="dep-inner">
+    <div class="section-head reveal">
+      <h2>O que dizem <em>as advogadas que passaram por ela</em></h2>
+      <p class="section-sub">Mensagens recebidas por WhatsApp, reproduzidas palavra por palavra.</p>
+    </div>
+    <div class="dep-grid">
+      <blockquote class="dep-card reveal">
+        <p>“Dra. Tarine é aquela fortaleza e simplicidade na qual nos inspiramos, ela sempre está em movimento e com ela pra tudo tem um jeito. Aprender com ela esses princípios me fez desenvolver uma outra percepção de advocacia, encontrar soluções estratégicas, e superar o medo e a insegurança na atuação, ela nos mostra diariamente que nós só vamos conseguir bons resultados quando superamos aquilo que nos limita e isso só se faz praticando. Poder ter esse contato diário com quem de fato vive a advocacia nos traz coragem, leveza, segurança e disciplina em nossa nossa profissão. Sou muito grata por todo ensinamento e aprendizado.”</p>
+        <cite>Advogada mentorada</cite>
+      </blockquote>
+      <blockquote class="dep-card reveal">
+        <p>“Nunca tinha atuado no previdenciário, até precisar fazer as primeiras audiências. Os primeiros passos na advocacia foram dados com o apoio de Dra. Tarine. O fato é que, quando se tem um norte seguro, a atuação também se sustenta.<br>Há mentorias que tem preço; outras, valor.<br>Minha eterna gratidão à Dra. Tarine por tudo!”</p>
+        <cite>Livia Andrade · advogada</cite>
+      </blockquote>
+      <blockquote class="dep-card reveal">
+        <p>“Sempre me senti insegura para atuar em audiências, principalmente nas de instrução. Com a paciência, dedicação e ensinamentos da Dra. Tarine, ganhei mais confiança e segurança para enfrentar esses momentos. Também admiro muito sua visão estratégica nos casos, que nos ajuda a encontrar o melhor caminho para alcançar os objetivos dos clientes. Sou muito grata por todo o aprendizado e apoio.”</p>
+        <cite>Isabella Cangussu · advogada</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- para quem é e para quem não é ---------- -->
+<section id="paraquem">
+  <div class="section-head reveal">
+    <h2>Para quem <em>é, e para quem não é</em></h2>
+    <p class="section-sub">
+      A conversa inicial existe justamente para isso. Mas dá para adiantar boa parte aqui.
+    </p>
+  </div>
+  <div class="cards-2">
+    <article class="glass glass-sim reveal">
+      <h3>É para você se</h3>
+      <ul class="lista-check">
+        <li>Você já vive da advocacia e o escritório não é mais um projeto paralelo</li>
+        <li>Existe equipe, mesmo que pequena, e ela ainda depende de você para tudo</li>
+        <li>Você quer sair da operação sem abrir mão da qualidade que construiu</li>
+        <li>Está disposta a escrever processo e sustentar padrão, não só a ouvir conselho</li>
+      </ul>
+    </article>
+    <article class="glass glass-nao reveal">
+      <h3>Não é para você se</h3>
+      <ul class="lista-x">
+        <li>Você ainda está começando e não tem casos nem equipe para organizar</li>
+        <li>Procura um curso técnico sobre uma área do direito</li>
+        <li>Quer uma fórmula pronta para aplicar sem adaptar ao seu escritório</li>
+        <li>Espera resultado sem mudar a própria rotina de trabalho</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ---------- como começa ---------- -->
+<section id="processo">
+  <div class="section-head reveal">
+    <h2>Como começa</h2>
+    <p class="section-sub">Sem formulário longo e sem funil. Começa por uma conversa.</p>
+  </div>
+  <div class="passos">
+    <div class="passo reveal">
+      <div class="passo-num">01</div>
+      <h3>Você chama no WhatsApp</h3>
+      <p>Conta em poucas linhas como o escritório está hoje: quantas pessoas, quais áreas e o que mais trava a sua semana.</p>
+    </div>
+    <div class="passo reveal">
+      <div class="passo-num">02</div>
+      <h3>Conversa de diagnóstico</h3>
+      <p>Uma conversa para entender em que ponto o escritório está e se a mentoria faz sentido para o seu momento. Se não fizer, ela vai dizer.</p>
+    </div>
+    <div class="passo reveal">
+      <div class="passo-num">03</div>
+      <h3>Formato e acompanhamento</h3>
+      <p>Formato, duração e investimento são definidos a partir do diagnóstico, porque escritório de duas pessoas e escritório de dez não têm o mesmo caminho.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- FAQ ---------- -->
+<section id="faq">
+  <div class="section-head reveal">
+    <h2>Perguntas que sempre chegam</h2>
+  </div>
+  <div class="faq-list">
+    <details class="faq-item"><summary>Quanto custa?</summary>
+      <p>O investimento é definido depois da conversa de diagnóstico, porque depende do tamanho do escritório e da profundidade do acompanhamento. Na própria conversa você recebe o valor, sem precisar entrar em nenhuma lista.</p></details>
+    <details class="faq-item"><summary>É só para quem atua no previdenciário?</summary>
+      <p>Não. A experiência da Dra. Tarine vem do previdenciário rural, mas o que a mentoria trata é gestão de escritório: delegação, processos e rotina de equipe. Isso independe da área em que você atua.</p></details>
+    <details class="faq-item"><summary>Preciso já ter equipe?</summary>
+      <p>Precisa ter pelo menos alguém além de você, nem que seja um estagiário ou uma secretária. O trabalho é sobre transferir critério de decisão, e isso pressupõe alguém para quem transferir.</p></details>
+    <details class="faq-item"><summary>É online ou presencial?</summary>
+      <p>A Dra. Tarine atende advogadas de fora de Minas, então o acompanhamento acontece a distância. O formato exato é combinado no diagnóstico.</p></details>
+    <details class="faq-item"><summary>Em quanto tempo o escritório muda?</summary>
+      <p>Não existe prazo honesto para isso, porque depende do que já existe no seu escritório e do quanto você consegue mudar da própria rotina. O que dá para dizer é que processo escrito e critério definido começam a aparecer nas primeiras semanas.</p></details>
+  </div>
+</section>
+
+<!-- ---------- CTA final ---------- -->
+<section id="contato">
+  <div class="section-head reveal">
+    <h2>Vamos olhar <em>o seu escritório</em></h2>
+    <p class="section-sub">
+      Uma conversa para entender onde ele trava. Se a mentoria não for para o seu momento,
+      você vai ouvir isso na hora.
+    </p>
+  </div>
+  <div class="contato-box reveal">
+    <a href="https://wa.me/5538992280505?text=Oi!%20Quero%20conversar%20sobre%20a%20mentoria.%20Meu%20escrit%C3%B3rio%20hoje%20est%C3%A1%20assim%3A" class="btn btn-solid btn-xl">Chamar no WhatsApp</a>
+    <p class="contato-linha">
+      <strong>Dra. Tarine Costa · OAB/MG 169.455</strong><br>
+      Porteirinha, Minas Gerais · advocaciatarine@gmail.com
+    </p>
+  </div>
+</section>
+
+<footer>
+  <span>© <span id="year"></span> Dra. Tarine Costa · OAB/MG 169.455 · Porteirinha, Minas Gerais</span>
+  <span class="legal">
+    Mentoria voltada à gestão de escritório de advocacia, destinada a advogados inscritos na
+    OAB. O conteúdo não constitui consultoria jurídica para caso concreto e não representa
+    promessa ou garantia de resultado profissional, financeiro ou processual.
+  </span>
+</footer>
+
+<!-- botão flutuante -->
+<a href="https://wa.me/5538992280505?text=Oi!%20Quero%20conversar%20sobre%20a%20mentoria." class="float-cta" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1s-.7 1-.9 1.2c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1 1 7.2 3.9z"/></svg>
+</a>
+
+<!-- libs por CDN: nada de build step, nada de npm install -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
