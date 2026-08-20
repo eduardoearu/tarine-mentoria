@@ -6,27 +6,25 @@
 
 :root {
   /* ---- PALETA — Dra. Tarine Costa ----
-     Amostrada dos arquivos reais dela: o marrom vem do fundo do retrato de
-     estúdio, o creme vem dos cards de depoimento, o dourado vem do terninho
-     e das bordas das artes. Não é paleta escolhida de catálogo.            */
-  --bg:        #120A08;   /* fundo principal — chocolate quase preto */
-  --bg-2:      #1A0F0C;   /* fundo de seção alternada */
-  --surface:   #21140F;   /* cartões */
-  --surface-2: #2C1B15;   /* cartões em cima de cartões */
-  --accent:    #C08A5E;   /* terracota dourado — destaque da marca */
-  --accent-hi: #E3D0B9;   /* creme dos cards de depoimento (hover, itálico) */
-  --ink:       #F6EEE4;   /* cor do texto — branco quente */
-  --muted:     #A99383;   /* texto secundário */
-  --line:      rgba(192, 138, 94, 0.18);  /* bordas: sempre o accent com alpha */
-  --cta:       #25D366;   /* cor do botão flutuante (WhatsApp) */
+     Amostrada dos arquivos reais dela: o marrom veio do fundo do retrato de
+     estúdio, o creme dos cards de depoimento, o terracota do terninho.     */
+  --bg:        #120A08;
+  --bg-2:      #1A0F0C;
+  --surface:   #21140F;
+  --surface-2: #2C1B15;
+  --accent:    #C08A5E;
+  --accent-hi: #E3D0B9;
+  --ink:       #F6EEE4;
+  --muted:     #A99383;
+  --line:      rgba(192, 138, 94, 0.18);
+  --cta:       #25D366;
 
-  /* os mesmos tons em rgb, para as camadas que precisam de transparência
-     (véu do hero, header ao rolar, fundo dos depoimentos, vinheta)        */
+  /* os mesmos tons em rgb, para véus e camadas translúcidas */
   --bg-rgb:     18, 10, 8;
   --accent-rgb: 192, 138, 94;
 
   /* ---- TIPOGRAFIA (troque aqui) ---- */
-  --font-display: "Playfair Display", Georgia, serif;    /* títulos */
+  --font-display: "Playfair Display", Georgia, serif;     /* títulos */
   --font-body:    "Inter", -apple-system, sans-serif;    /* corpo */
 
   /* ---- RITMO ---- */
@@ -301,7 +299,7 @@ ul { list-style: none; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 /* ---------- base das seções ---------- */
-section { position: relative; padding: clamp(80px, 11vw, 150px) var(--pad); }
+section { position: relative; padding: clamp(56px, 7vw, 96px) var(--pad); }
 .section-head { max-width: 780px; margin-bottom: clamp(42px, 6vw, 72px); }
 .section-head h2 {
   font-family: var(--font-display);
@@ -471,148 +469,13 @@ footer .legal { max-width: 620px; font-size: 12px; line-height: 1.6; }
 .float-cta svg { width: 28px; height: 28px; fill: #fff; }
 
 /* ============================================================
-   QUEM CRIOU — foto à esquerda, texto à direita
-   ============================================================ */
-#autora { background: var(--bg-2); }
-
-.autora-wrap {
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: clamp(28px, 5vw, 72px);
-  align-items: center;
-  max-width: 1180px;
-  margin: 0 auto;
-}
-
-.autora-foto { position: relative; margin: 0; }
-.autora-foto img {
-  width: 100%;
-  /* height:auto é obrigatório: sem ele o atributo height="640" do HTML vira
-     altura em CSS e a foto sai esticada.                                    */
-  height: auto;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  object-position: 50% 22%;   /* mantém o rosto no enquadramento ao cortar */
-  border-radius: 3px;
-  border: 1px solid var(--line);
-}
-.autora-foto figcaption {
-  margin-top: 14px;
-  font-size: 12px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-.autora-texto > p {
-  color: var(--muted);
-  margin-bottom: 18px;
-  max-width: 58ch;
-}
-
-.autora-quote {
-  border-left: 2px solid var(--accent);
-  padding: 4px 0 4px 22px;
-  margin: 28px 0;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(19px, 2vw, 24px);
-  line-height: 1.5;
-  color: var(--accent-hi);
-}
-.autora-quote cite {
-  display: block;
-  margin-top: 14px;
-  font-family: var(--font-body);
-  font-style: normal;
-  font-size: 12px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.autora-creds { margin-top: 26px; }
-.autora-creds li {
-  padding: 12px 0;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 15px;
-}
-.autora-creds li strong { color: var(--ink); font-weight: 500; }
-
-/* ============================================================
-   A TESE — uma frase dela sozinha, entre duas seções
-   ============================================================ */
-#tese { padding-top: 0; }
-.tese-quote {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(24px, 3.6vw, 42px);
-  line-height: 1.35;
-  color: var(--accent-hi);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  padding: clamp(30px, 5vw, 56px) 0;
-}
-.tese-quote cite {
-  display: block;
-  margin-top: 22px;
-  font-family: var(--font-body);
-  font-style: normal;
-  font-size: 12px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-/* ============================================================
-   PARA QUEM É / NÃO É — duas colunas que se opõem
-   ============================================================ */
-.cards-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(18px, 2.5vw, 30px);
-}
-.glass-sim { border-color: rgba(192, 138, 94, 0.42); }
-.glass-nao { opacity: 0.78; }
-
-.lista-check li,
-.lista-x li {
-  position: relative;
-  padding: 11px 0 11px 30px;
-  border-bottom: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.55;
-}
-.lista-check li:last-child,
-.lista-x li:last-child { border-bottom: 0; }
-
-.lista-check li::before,
-.lista-x li::before {
-  position: absolute;
-  left: 0;
-  top: 10px;
-  font-size: 15px;
-  line-height: 1.5;
-}
-.lista-check li::before { content: "✓"; color: var(--accent); }
-.lista-x li::before { content: "✕"; color: var(--muted); }
-
-.link-wa { color: var(--accent-hi); border-bottom: 1px solid var(--line); }
-.link-wa:hover { color: var(--accent); }
-
-/* ============================================================
    RESPONSIVO
    ============================================================ */
 @media (max-width: 1024px) {
   .prova-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cards-3, .servicos-grid, .dep-grid, .passos { grid-template-columns: 1fr 1fr; }
   .autora-wrap { grid-template-columns: 1fr; }
-  .autora-foto { max-width: 380px; }
+  .autora-foto { max-width: 360px; }
 }
 
 @media (max-width: 768px) {
@@ -620,50 +483,32 @@ footer .legal { max-width: 620px; font-size: 12px; line-height: 1.6; }
   /* mobile não aguenta 108 imagens: troca a sequência pelo vídeo em loop */
   #hero-canvas { display: none; }
   #hero-video { display: block; }
-  .cards-3, .servicos-grid, .dep-grid, .passos { grid-template-columns: 1fr; }
-  .cards-2 { grid-template-columns: 1fr; }
+  .cards-3, .servicos-grid, .dep-grid, .passos, .cards-2 { grid-template-columns: 1fr; }
   .prova-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero-ctas .btn { width: 100%; justify-content: center; }
 
   /* o véu do hero é horizontal no desktop (texto à esquerda, ela à direita).
-     No vertical o texto fica em cima, então o véu precisa virar de eixo,
-     senão escurece justamente o rosto dela.                                */
+     No vertical o texto fica em cima, então o véu vira de eixo.          */
   .hero-shade {
-    background:
-      linear-gradient(180deg,
-        rgba(var(--bg-rgb), 0.95) 0%,
-        rgba(var(--bg-rgb), 0.92) 42%,
-        rgba(var(--bg-rgb), 0.55) 58%,
-        rgba(var(--bg-rgb), 0.12) 72%,
-        rgba(var(--bg-rgb), 0.30) 100%);
+    background: linear-gradient(180deg,
+      rgba(var(--bg-rgb), 0.95) 0%, rgba(var(--bg-rgb), 0.92) 42%,
+      rgba(var(--bg-rgb), 0.55) 58%, rgba(var(--bg-rgb), 0.12) 72%,
+      rgba(var(--bg-rgb), 0.30) 100%);
   }
-
-  /* aperta o bloco de texto para sobrar a faixa de baixo pra ela */
-  #hero h1 { font-size: 34px; line-height: 1.14; }
-  .hero-sub { font-size: 15px; line-height: 1.55; max-width: none; }
-  .hero-ctas { gap: 10px; }
-  .hero-ctas .btn { padding: 13px 20px; font-size: 13px; }
-  .hero-proof { font-size: 13px; }
-
-  /* cabeçalho apertado: sobra só o monograma e o botão */
   .brand-text { display: none; }
-  .btn-header { padding: 11px 16px; font-size: 12px; }
-
-  /* a linha da OAB cai por cima do rosto dela: faixa escura devolve o contraste */
+  .btn-header { padding: 12px 16px; font-size: 12px; }
+  .scroll-hint { display: none; }
+  #hero h1 { font-size: 34px; line-height: 1.14; }
+  .hero-sub { font-size: 15px; line-height: 1.55; }
   .hero-proof {
     background: rgba(var(--bg-rgb), 0.72);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    padding: 9px 12px;
-    border-left: 2px solid var(--accent);
-    color: var(--ink);
+    backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+    padding: 9px 12px; border-left: 2px solid var(--accent); color: var(--ink);
   }
-
-  /* a dica de rolagem colidia com a linha da OAB */
-  .scroll-hint { display: none; }
-
-  /* a foto de baixo não precisa ocupar a tela inteira */
   .autora-foto { max-width: 300px; margin: 0 auto; }
+  /* alvo de toque: a skill exige 44px de altura mínima */
+  .btn { min-height: 48px; }
+  .faq-item summary { min-height: 48px; display: flex; align-items: center; }
 }
 
 /* ============================================================
@@ -677,3 +522,81 @@ footer .legal { max-width: 620px; font-size: 12px; line-height: 1.6; }
   }
   .grain { display: none; }
 }
+
+/* ============================================================
+   BLOCOS PRÓPRIOS DESTE SITE (mentoria · Dra. Tarine Costa)
+   Cor nova só entra como token no :root, nunca escrita aqui.
+   ============================================================ */
+
+/* a faixa de números é fina: não precisa do respiro de uma seção inteira */
+#prova { padding-top: clamp(38px, 4.5vw, 60px); padding-bottom: clamp(38px, 4.5vw, 60px); }
+
+/* ---------- a tese: uma frase dela sozinha entre duas seções ---------- */
+#tese { padding-top: 0; }
+.tese-quote {
+  max-width: 900px; margin: 0 auto; text-align: center;
+  font-family: var(--font-display); font-style: italic;
+  font-size: clamp(23px, 3.2vw, 38px); line-height: 1.35;
+  color: var(--accent-hi);
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: clamp(28px, 4vw, 48px) 0;
+}
+.tese-quote cite {
+  display: block; margin-top: 18px;
+  font-family: var(--font-body); font-style: normal;
+  font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- quem conduz: foto à esquerda, texto à direita ---------- */
+#autora { background: var(--bg-2); }
+.autora-wrap {
+  display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(26px, 4vw, 60px); align-items: center;
+  max-width: 1120px; margin: 0 auto;
+}
+.autora-foto { position: relative; margin: 0; }
+.autora-foto img {
+  width: 100%;
+  /* height:auto é obrigatório: sem ele o atributo height do HTML vira
+     altura em CSS e a foto sai esticada.                              */
+  height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 28%;
+  border-radius: 3px; border: 1px solid var(--line);
+}
+.autora-foto figcaption {
+  margin-top: 12px; font-size: 11px; letter-spacing: 0.24em;
+  text-transform: uppercase; color: var(--accent);
+}
+.autora-texto > p { color: var(--muted); margin-bottom: 16px; max-width: 58ch; }
+.autora-quote {
+  border-left: 2px solid var(--accent); padding: 2px 0 2px 20px; margin: 24px 0;
+  font-family: var(--font-display); font-style: italic;
+  font-size: clamp(18px, 1.8vw, 22px); line-height: 1.5; color: var(--accent-hi);
+}
+.autora-quote cite {
+  display: block; margin-top: 12px; font-family: var(--font-body); font-style: normal;
+  font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted);
+}
+.autora-creds { margin-top: 22px; }
+.autora-creds li {
+  padding: 11px 0; border-top: 1px solid var(--line);
+  color: var(--muted); font-size: 15px;
+}
+.autora-creds li strong { color: var(--ink); font-weight: 500; }
+
+/* ---------- para quem é / não é ---------- */
+.cards-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2.2vw, 28px); }
+.glass-sim { border-color: rgba(var(--accent-rgb), 0.42); }
+.glass-nao { opacity: 0.78; }
+.lista-check li, .lista-x li {
+  position: relative; padding: 10px 0 10px 28px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted); font-size: 15px; line-height: 1.55;
+}
+.lista-check li:last-child, .lista-x li:last-child { border-bottom: 0; }
+.lista-check li::before, .lista-x li::before { position: absolute; left: 0; top: 9px; font-size: 15px; }
+.lista-check li::before { content: "✓"; color: var(--accent); }
+.lista-x li::before { content: "✕"; color: var(--muted); }
+
+.link-wa { color: var(--accent-hi); border-bottom: 1px solid var(--line); }
+.link-wa:hover { color: var(--accent); }

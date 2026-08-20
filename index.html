@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Mentoria para advogadas · Dra. Tarine Costa</title>
-<meta name="description" content="Mentoria para advogadas que querem um escritório previsível: processos, delegação e uma equipe com autonomia. Com a Dra. Tarine Costa, OAB/MG 169.455, que construiu o próprio escritório do zero no interior de Minas.">
+<meta name="description" content="Mentoria para advogadas que querem um escritório previsível: delegação, processos e uma equipe com autonomia. Com a Dra. Tarine Costa, OAB/MG 169.455.">
 <meta property="og:title" content="Mentoria para advogadas · Dra. Tarine Costa">
-<meta property="og:description" content="Um escritório que funciona mesmo quando você não está. Processos, delegação e equipe com autonomia.">
+<meta property="og:description" content="Um escritório que funciona mesmo quando você não está. Delegação, processos e equipe com autonomia.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/img/og-tarine.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- favicon: o SVG serve os navegadores modernos, o .ico cobre o resto e evita 404 no console -->
+<!-- favicon: o SVG cobre navegador moderno, o .ico o resto e evita 404 no console -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23120A08'/><text x='16' y='23' font-family='Georgia,serif' font-size='16' font-weight='700' fill='%23C08A5E' text-anchor='middle'>TC</text></svg>">
 <link rel="alternate icon" href="favicon.ico" sizes="32x32 64x64">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -22,6 +22,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+
+<!-- dados estruturados: só fatos verificáveis. Sem nota inventada. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Dra. Tarine Costa · Mentoria para advogadas",
+  "description": "Mentoria de gestão para advogadas que querem um escritório previsível, com delegação, processos e equipe autônoma.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Benjamin Constant, 156",
+    "addressLocality": "Porteirinha",
+    "addressRegion": "MG",
+    "postalCode": "39520-000",
+    "addressCountry": "BR"
+  },
+  "telephone": "+5538992280505",
+  "email": "advocaciatarine@gmail.com",
+  "areaServed": "BR",
+  "founder": { "@type": "Person", "name": "Tarine Costa", "jobTitle": "Advogada", "identifier": "OAB/MG 169.455" }
+}
+</script>
 </head>
 <body>
 
@@ -53,7 +75,7 @@
     <a href="#autora">Quem conduz</a>
     <a href="#paraquem">Para quem é</a>
   </nav>
-  <a href="https://wa.me/5538992280505?text=Oi!%20Quero%20conversar%20sobre%20a%20mentoria." class="btn btn-solid btn-header">Quero conversar</a>
+  <a href="https://wa.me/5538992280505?text=Oi!%20Quero%20conversar%20sobre%20a%20mentoria." class="btn btn-solid btn-header" target="_blank" rel="noopener">Quero conversar</a>
 </header>
 
 <!-- ============================================================
@@ -61,8 +83,8 @@
      ============================================================ -->
 <section id="hero">
   <canvas id="hero-canvas"></canvas>
-  <!-- o clipe deitado corta a Tarine fora no celular, então existe uma versão vertical.
-       O <source media> escolhe sozinho, sem javascript. -->
+  <!-- o clipe deitado corta a Tarine fora no celular, então existe uma versão
+       vertical. O <source media> escolhe sozinho, sem javascript. -->
   <video id="hero-video" poster="assets/img/hero-poster-mobile.jpg"
          autoplay muted loop playsinline preload="auto">
     <source src="assets/video/hero-mobile.mp4" media="(max-width: 768px)" type="video/mp4">
@@ -74,11 +96,11 @@
     <p class="eyebrow reveal-hero">Mentoria para advogadas</p>
     <h1 class="reveal-hero">Seu escritório precisa funcionar <em>mesmo quando você não está</em>.</h1>
     <p class="hero-sub reveal-hero">
-      Para a advogada que virou o gargalo do próprio escritório. Processos, delegação e
+      Para a advogada que virou o gargalo do próprio escritório. Delegação, processos e
       uma equipe que decide sem esperar por você.
     </p>
     <div class="hero-ctas reveal-hero">
-      <a href="https://wa.me/5538992280505?text=Oi!%20Quero%20conversar%20sobre%20a%20mentoria." class="btn btn-solid">Quero conversar sobre a mentoria</a>
+      <a href="https://wa.me/5538992280505?text=Oi!%20Quero%20conversar%20sobre%20a%20mentoria." class="btn btn-solid" target="_blank" rel="noopener">Quero conversar sobre a mentoria</a>
       <a href="#paraquem" class="btn btn-ghost">Ver se é pro meu momento</a>
     </div>
     <div class="hero-proof reveal-hero">
@@ -95,16 +117,16 @@
 <!-- faixa que rola: os termos de gestão, não os de técnica jurídica -->
 <div class="marquee">
   <div class="marquee-track">
-    <span>Processos</span><i>◆</i>
     <span>Delegação</span><i>◆</i>
+    <span>Processos</span><i>◆</i>
     <span>Equipe com autonomia</span><i>◆</i>
     <span>Rotina do escritório</span><i>◆</i>
     <span>Previsibilidade</span><i>◆</i>
     <span>Posicionamento</span><i>◆</i>
     <span>Honorários</span><i>◆</i>
     <!-- o conteúdo é repetido de propósito: é o que faz o loop parecer infinito -->
-    <span>Processos</span><i>◆</i>
     <span>Delegação</span><i>◆</i>
+    <span>Processos</span><i>◆</i>
     <span>Equipe com autonomia</span><i>◆</i>
     <span>Rotina do escritório</span><i>◆</i>
     <span>Previsibilidade</span><i>◆</i>
@@ -113,7 +135,7 @@
   </div>
 </div>
 
-<!-- ---------- prova em números ---------- -->
+<!-- ---------- prova em números: só o que tem origem verificável ---------- -->
 <section id="prova">
   <div class="prova-grid reveal">
     <div class="prova-item"><strong>10 anos</strong><span>de escritório próprio</span></div>
@@ -123,7 +145,7 @@
   </div>
 </section>
 
-<!-- ---------- as dores ---------- -->
+<!-- ---------- as três situações, no lugar de "quem somos" ---------- -->
 <section id="situacoes">
   <div class="section-head reveal">
     <h2>O escritório cresceu. <em>E a conta não fecha</em></h2>
@@ -150,7 +172,7 @@
   </div>
 </section>
 
-<!-- ---------- a tese, na voz dela ---------- -->
+<!-- ---------- a tese, na voz dela (post de 19/08/2026) ---------- -->
 <section id="tese">
   <blockquote class="tese-quote reveal">
     “Quando tudo depende de você, o problema não é falta de tempo, é falta de autonomia
@@ -191,7 +213,7 @@
 <section id="autora">
   <div class="autora-wrap">
     <figure class="autora-foto reveal">
-      <img src="assets/img/tarine-evento.jpg" alt="Dra. Tarine Costa em evento de marketing jurídico no Espaço OAB, em Montes Claros" width="600" height="800" loading="lazy">
+      <img src="assets/img/tarine-evento.jpg" alt="Dra. Tarine Costa, de terno terracota, em evento de marketing jurídico no Espaço OAB de Montes Claros" width="600" height="800" loading="lazy">
       <figcaption>Evento de marketing jurídico · Espaço OAB, Montes Claros</figcaption>
     </figure>
     <div class="autora-texto">
@@ -207,8 +229,7 @@
       <p class="reveal">
         Ao longo de mais de dez anos em Porteirinha, Minas Gerais, transformou essa convicção em
         um escritório conceituado, com equipe e rotina próprias. A mentoria nasceu do caminho que
-        ela percorreu para sair de advogada que faz tudo e chegar em advogada que dirige um
-        escritório.
+        ela percorreu para sair de advogada que faz tudo e chegar em advogada que dirige.
       </p>
       <blockquote class="autora-quote reveal">
         “Poder ter esse contato diário com quem de fato vive a advocacia nos traz coragem,
@@ -226,7 +247,7 @@
 
 <!-- ---------- depoimentos sobre vídeo de fundo ---------- -->
 <section id="depoimentos">
-  <video src="assets/video/accent.mp4" autoplay muted loop playsinline></video>
+  <video src="assets/video/accent.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
   <div class="dep-shade"></div>
   <div class="dep-inner">
     <div class="section-head reveal">
@@ -300,12 +321,12 @@
     <div class="passo reveal">
       <div class="passo-num">03</div>
       <h3>Formato e acompanhamento</h3>
-      <p>Formato, duração e investimento são definidos a partir do diagnóstico, porque escritório de duas pessoas e escritório de dez não têm o mesmo caminho.</p>
+      <p>Formato, duração e investimento saem do diagnóstico, porque escritório de duas pessoas e escritório de dez não têm o mesmo caminho.</p>
     </div>
   </div>
 </section>
 
-<!-- ---------- FAQ ---------- -->
+<!-- ---------- FAQ: cada dúvida aqui é uma objeção a menos no WhatsApp ---------- -->
 <section id="faq">
   <div class="section-head reveal">
     <h2>Perguntas que sempre chegam</h2>
@@ -334,7 +355,7 @@
     </p>
   </div>
   <div class="contato-box reveal">
-    <a href="https://wa.me/5538992280505?text=Oi!%20Quero%20conversar%20sobre%20a%20mentoria.%20Meu%20escrit%C3%B3rio%20hoje%20est%C3%A1%20assim%3A" class="btn btn-solid btn-xl">Chamar no WhatsApp</a>
+    <a href="https://wa.me/5538992280505?text=Oi!%20Quero%20conversar%20sobre%20a%20mentoria.%20Meu%20escrit%C3%B3rio%20hoje%20est%C3%A1%20assim%3A" class="btn btn-solid btn-xl" target="_blank" rel="noopener">Chamar no WhatsApp</a>
     <p class="contato-linha">
       <strong>Dra. Tarine Costa · OAB/MG 169.455</strong><br>
       Porteirinha, Minas Gerais · advocaciatarine@gmail.com
@@ -352,8 +373,8 @@
 </footer>
 
 <!-- botão flutuante -->
-<a href="https://wa.me/5538992280505?text=Oi!%20Quero%20conversar%20sobre%20a%20mentoria." class="float-cta" aria-label="Falar no WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1s-.7 1-.9 1.2c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1 1 7.2 3.9z"/></svg>
+<a href="https://wa.me/5538992280505?text=Oi!%20Quero%20conversar%20sobre%20a%20mentoria." class="float-cta" aria-label="Falar no WhatsApp" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1s-.7 1-.9 1.2c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1 1 7.2 3.9z"/></svg>
 </a>
 
 <!-- libs por CDN: nada de build step, nada de npm install -->

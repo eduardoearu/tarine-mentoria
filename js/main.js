@@ -249,3 +249,14 @@ faqItems.forEach((item) => {
 
 /* ---------- ano do rodapé ---------- */
 document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ---------- FAQ: abrir uma fecha as outras ----------
+   Item da checklist de qa-e-entrega.md. Sem isso o usuário abre cinco
+   respostas e perde a referência de onde estava.                      */
+const faqItens = document.querySelectorAll('.faq-item');
+faqItens.forEach((item) => {
+  item.addEventListener('toggle', () => {
+    if (!item.open) return;
+    faqItens.forEach((outro) => { if (outro !== item) outro.open = false; });
+  });
+});
